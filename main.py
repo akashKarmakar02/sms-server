@@ -61,7 +61,7 @@ async def update_student(id: int, request: Request, db: Session = Depends(get_db
         roll_no=req_info['rollNo'],
         course=req_info['course'],
         address=req_info['address'],
-        phone_no=int(req_info['phone'])
+        phone_no=req_info['phone']
     )
     student = db.query(Student).filter_by(id=id).first()
     student.update(new_student)
